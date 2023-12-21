@@ -1,5 +1,5 @@
 class StringBuilder {
-    #value = "";
+    #value;
     constructor(initialValue) {
         this.#value = initialValue;
     }
@@ -7,15 +7,14 @@ class StringBuilder {
       return  this.#value;
     }
     padEnd(str) {
-        this.#value.concat(str);
+        return this.#value += str;
     }
     padStart(str) {
-        this.#value = str.concat(this.#value);
-        return this.#value;
+        return this.#value = str + this.#value;
     }
     
     padBoth(str) {
-
+    return this.#value =  str + this.#value + str;
     }
 }
 
